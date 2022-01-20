@@ -19,5 +19,4 @@ public class Chamado {
 	private LocalDate dataFechamento;
 	private Tecnico tecnico;
 	private Cliente cliente;
-	
 }
