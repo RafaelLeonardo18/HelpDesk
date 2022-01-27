@@ -19,13 +19,13 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Chamado implements Serializable{
+public class Chamado implements Serializable {
 	
 	public static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
-	private Integer id;
+	private Long id;
 	
 	@Column (nullable = false)
 	private String titulo;

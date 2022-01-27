@@ -32,7 +32,7 @@ public abstract class Pessoa implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	protected Integer id;
+	protected Long id;
 	
 	@Column (nullable = false)
 	protected String nome;
@@ -56,7 +56,7 @@ public abstract class Pessoa implements Serializable{
 	protected Set<Perfil> perfis = new HashSet<>();
 
 	//Construtor da classe
-	public Pessoa(Integer id, String nome, String cpf, String email, String senha) {
+	public Pessoa(Long id, String nome, String cpf, String email, String senha) {
 		super();
 		this.id = id;
 		this.nome = nome;
