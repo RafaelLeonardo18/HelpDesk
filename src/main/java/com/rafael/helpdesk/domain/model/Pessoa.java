@@ -26,7 +26,7 @@ import lombok.Setter;
 @Getter @Setter
 @NoArgsConstructor
 @Entity
-public abstract class Pessoa implements Serializable{
+public abstract class Pessoa implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -56,9 +56,8 @@ public abstract class Pessoa implements Serializable{
 	protected Set<Perfil> perfis = new HashSet<>();
 
 	//Construtor da classe
-	public Pessoa(Long id, String nome, String cpf, String email, String senha) {
+	public Pessoa(String nome, String cpf, String email, String senha) {
 		super();
-		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;

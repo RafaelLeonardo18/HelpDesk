@@ -27,8 +27,9 @@ public class Tecnico extends Pessoa {
 		this.perfis.add(Perfil.TECNICO);
 	}
 
-	public Tecnico(Long id, String nome, String cpf, String email, String senha) {
-		super(id, nome, cpf, email, senha);
+	public Tecnico(String nome, String cpf, String email, String senha) {
+		super(nome, cpf, email, senha);
 		this.perfis.add(Perfil.TECNICO);
 	}
+	
 }

@@ -15,13 +15,26 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.rafael.helpdesk.domain.enums.Prioridade;
 import com.rafael.helpdesk.domain.enums.Status;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-@Data
+@Setter @Getter @ToString @NoArgsConstructor
 @Entity
 public class Chamado implements Serializable {
 	
 	public static final long serialVersionUID = 1L;
+	
+	//Construtor da classe
+	public Chamado(String titulo, String observacoes, Prioridade prioridade, Status status, Tecnico tecnico, Cliente cliente) {
+		this.titulo = titulo;
+		this.observacoes = observacoes;
+		this.prioridade = prioridade;
+		this.status = status;
+		this.tecnico = tecnico;
+		this.cliente = cliente;	
+	}
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
@@ -43,7 +56,7 @@ public class Chamado implements Serializable {
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataAbertura = LocalDate.now();
 	
-	@Column (nullable = false, columnDefinition = "date", updatable = false)
+	@Column (nullable = true, columnDefinition = "date", updatable = false)
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataFechamento;
 	
