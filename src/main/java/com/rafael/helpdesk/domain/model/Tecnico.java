@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rafael.helpdesk.domain.enums.Perfil;
 
 import lombok.Getter;
@@ -18,6 +19,7 @@ public class Tecnico extends Pessoa {
 	
 	private static final long serialVersionUID = 1L;
 	
+	@JsonIgnore
 	@OneToMany (mappedBy = "tecnico", fetch = FetchType.LAZY)
 	private List<Chamado> chamados = new ArrayList<Chamado>();
 
